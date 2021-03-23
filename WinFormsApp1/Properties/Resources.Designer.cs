@@ -59,5 +59,16 @@ namespace WinFormsApp1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gratis_png_iconos_de_la_computadora_de_la_libreta_editor_de_texto_de_graficos_de_red_portatil_icono_de_la_libreta {
+            get {
+                object obj = ResourceManager.GetObject("gratis-png-iconos-de-la-computadora-de-la-libreta-editor-de-texto-de-graficos-de-" +
+                        "red-portatil-icono-de-la-libreta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

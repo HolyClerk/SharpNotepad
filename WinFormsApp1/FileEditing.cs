@@ -11,7 +11,7 @@ namespace WinFormsApp1
     {
         private bool isDarkTheme = false;
 
-        public string publicPathDir;
+        public string publicPathDir = "";
 
         private string _pathDirectory = "";
 
@@ -52,7 +52,8 @@ namespace WinFormsApp1
             }
         }
 
-        public void ChangeTheme(Panel panel, Label label, Label label2, TextBox textBox, Button button1, Button button2, Button button3)
+        public void ChangeTheme(Panel panel, Label label, Label label2, TextBox textBox, 
+            Button button1, Button button2, Button button3, Button button4, Button button5)
         {
             if (!isDarkTheme)
             {
@@ -66,6 +67,8 @@ namespace WinFormsApp1
                 button1.ForeColor = Color.White;
                 button2.ForeColor = Color.White;
                 button3.ForeColor = Color.White;
+                button4.ForeColor = Color.White;
+                button5.ForeColor = Color.White;
 
                 textBox.BackColor = Color.FromArgb(84, 84, 84);
                 textBox.ForeColor = Color.White;
@@ -82,6 +85,8 @@ namespace WinFormsApp1
                 button1.ForeColor = Color.Black;
                 button2.ForeColor = Color.Black;
                 button3.ForeColor = Color.Black;
+                button4.ForeColor = Color.White;
+                button5.ForeColor = Color.White;
 
                 textBox.BackColor = Color.FromArgb(46, 54, 67);
                 textBox.ForeColor = Color.White;
