@@ -193,6 +193,11 @@ namespace WinFormsApp1
             // saveFileDialog1
             // 
             this.saveFileDialog1.CreatePrompt = true;
+            this.saveFileDialog1.DefaultExt = "txt";
+            this.saveFileDialog1.Filter = "Text files|*.txt|Python|*.py";
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.ShowHelp = true;
+            this.saveFileDialog1.SupportMultiDottedExtensions = true;
             this.saveFileDialog1.Title = "Выберите файл";
             // 
             // Form1

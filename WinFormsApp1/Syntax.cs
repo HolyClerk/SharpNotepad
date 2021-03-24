@@ -9,7 +9,12 @@ namespace WinFormsApp1
 {
     class Syntax
     {
-        public void ChangeColor(TextBox textBox)
+        private void ChangeColor(TextBox textBox)
+        {
+
+        }
+
+        private void CheckSyntax(TextBox text)
         {
 
         }
