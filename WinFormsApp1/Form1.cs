@@ -13,6 +13,7 @@ namespace WinFormsApp1
     public partial class Form1 : Form
     {
         Development Development = new Development();
+        Syntax Syntax = new Syntax();
 
         public Form1()
         {
@@ -22,6 +23,7 @@ namespace WinFormsApp1
 
         private void mTextBox_TextChanged(object sender, EventArgs e)
         {
+            // Условия для появление скроллбара
             if (mTextBox.Lines.Length > 24)
             {
                 mTextBox.ScrollBars = ScrollBars.Vertical;
@@ -41,6 +43,7 @@ namespace WinFormsApp1
                 label2.Text = "*" + Development.publicPathDir;
             }
 
+            // При изменении текста и\или не сохраненном файле меняется заголовок
             label2.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             label2.Location = new Point(345, 9);
         }
@@ -122,6 +125,44 @@ namespace WinFormsApp1
                 label2.Font = new Font("Segoe UI", 10);
                 label2.Location = new Point(355, 9);
                 label2.Text = Development.publicPathDir;
+            }
+        }
+
+        private void Form1_ControlAdded(object sender, ControlEventArgs e)
+        {
+            panel1.Controls.Add(e.Control);
+        }
+
+        // Движение окна. Передаются координаты в lastCoordinate при нажатии мыши и при ее движении эти координаты
+        // соответсвуют координатам мыши.
+
+        Point lastCoordinate;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastCoordinate = new Point(e.X, e.Y);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Left += e.X - lastCoordinate.X;
+                Top += e.Y - lastCoordinate.Y;
+            }
+        }
+
+        private void label2_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastCoordinate = new Point(e.X, e.Y);
+        }
+
+        private void label2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Left += e.X - lastCoordinate.X;
+                Top += e.Y - lastCoordinate.Y;
             }
         }
     }

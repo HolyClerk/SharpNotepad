@@ -122,6 +122,8 @@ namespace WinFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 500);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // button7
             // 
@@ -180,6 +182,8 @@ namespace WinFormsApp1
             this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Unnamed file";
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDown);
+            this.label2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label2_MouseMove);
             // 
             // label1
             // 
@@ -202,6 +206,7 @@ namespace WinFormsApp1
             // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -212,6 +217,7 @@ namespace WinFormsApp1
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "Form1";
             this.Text = "Sharp Notepad";
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Form1_ControlAdded);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
